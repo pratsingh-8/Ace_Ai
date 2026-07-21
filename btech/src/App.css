@@ -1,0 +1,215 @@
+/* App.css - ACE AI Landing Page */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth}
+body{
+background:radial-gradient(circle at top,#173d8b 0%,#091225 35%,#050816 100%);
+color:#fff;
+overflow-x:auto;
+overflow-y: auto;
+}
+body::before{
+content:"";
+position:fixed;
+left:-180px;top:-180px;
+width:420px;height:420px;
+background:#00b8ff;
+filter:blur(180px);
+opacity:.18;
+border-radius:50%;
+z-index:-1;
+}
+body::after{
+content:"";
+position:fixed;
+right:-150px;bottom:-150px;
+width:380px;height:380px;
+background:#8b3dff;
+filter:blur(180px);
+opacity:.18;
+border-radius:50%;
+z-index:-1;
+}
+
+/* Navbar */
+.navbar{
+position:fixed;
+top:0;left:0;width:100%;
+background:rgba(8,16,36,.65);
+backdrop-filter:blur(16px);
+border-bottom:1px solid rgba(0,184,255,.15);
+z-index:100;
+}
+nav{
+max-width:1200px;
+margin:auto;
+height:80px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 40px;
+}
+.logo,.right{display:flex;align-items:center;list-style:none}
+.logo a{
+font-size:2rem;
+font-weight:800;
+color:#fff;
+text-decoration:none;
+letter-spacing:1px;
+}
+.logo span{
+background:linear-gradient(90deg,#00b8ff,#31d5ff,#8b3dff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+.right li{margin-left:35px}
+.right a{
+text-decoration:none;
+color:#dce8ff;
+transition:.3s;
+}
+.right a:hover{color:#31d5ff}
+
+/* Hero */
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:120px 20px 60px;
+}
+.hero section{max-width:900px}
+.hero section p:first-child{
+font-size:4.5rem;
+font-weight:800;
+line-height:1.1;
+background:linear-gradient(90deg,#fff,#31d5ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin-bottom:25px;
+}
+.hero section p:nth-child(2){
+font-size:1.15rem;
+color:#c4d0e6;
+line-height:1.8;
+max-width:700px;
+margin:auto;
+}
+.hero button,#freetrial button{
+margin-top:40px;
+padding:16px 40px;
+border:none;
+border-radius:50px;
+background:linear-gradient(90deg,#00b8ff,#31d5ff,#8b3dff);
+color:#fff;
+font-weight:700;
+cursor:pointer;
+transition:.35s;
+box-shadow:0 0 25px rgba(0,184,255,.3);
+}
+.hero button:hover,#freetrial button:hover{
+transform:translateY(-4px);
+box-shadow:0 0 35px rgba(0,184,255,.5);
+}
+
+/* Sections */
+#feature,#work,#freetrial{
+max-width:1200px;
+margin:100px auto;
+padding:0 20px;
+text-align:center;
+}
+#feature>p:first-child,#work>p:first-child{
+color:#31d5ff;
+font-weight:600;
+margin-bottom:15px;
+}
+#feature>p:nth-child(2),#work>p:nth-child(2),#freetrial h2{
+font-size:2.8rem;
+font-weight:800;
+margin-bottom:20px;
+}
+#feature>p:nth-child(3),#work>p:nth-child(3),#freetrial p{
+max-width:700px;
+margin:0 auto;
+color:#b7c5df;
+line-height:1.8;
+}
+
+/* Cards */
+.f1,.work-card{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:30px;
+margin-top:60px;
+}
+.car,.work-card>div{
+min-height:230px;
+background:rgba(18,29,55,.75);
+backdrop-filter:blur(18px);
+border:1px solid rgba(49,213,255,.2);
+border-radius:22px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:1.4rem;
+font-weight:700;
+transition:.35s;
+}
+.car:hover,.work-card>div:hover{
+transform:translateY(-8px);
+box-shadow:0 0 28px rgba(0,184,255,.35);
+border-color:#31d5ff;
+}
+
+/* CTA */
+#freetrial{
+background:rgba(18,29,55,.72);
+border:1px solid rgba(49,213,255,.2);
+border-radius:24px;
+padding:70px 20px;
+backdrop-filter:blur(18px);
+}
+
+/* Footer */
+.footer{
+margin-top:100px;
+padding:35px 20px;
+border-top:1px solid rgba(49,213,255,.15);
+background:#07101f;
+height:5rem;
+}
+.footer footer{
+max-width:1200px;
+margin:auto;
+}
+.footer ul{
+display:flex;
+justify-content:space-between;
+align-items:center;
+list-style:none;
+flex-wrap:wrap;
+gap:20px;
+}
+.footer a{
+text-decoration:none;
+color:#fff;
+font-size:1.8rem;
+font-weight:800;
+}
+.footer span{
+background:linear-gradient(90deg,#00b8ff,#31d5ff,#8b3dff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+.footer li:last-child{color:#9fb2d6}
+
+@media(max-width:768px){
+nav{padding:0 20px}
+.right li{margin-left:18px}
+.hero section p:first-child{font-size:3rem}
+#feature>p:nth-child(2),#work>p:nth-child(2),#freetrial h2{font-size:2rem}
+.footer ul{flex-direction:column}
+}

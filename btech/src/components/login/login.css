@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    radial-gradient(circle at top,#143175 0%,#08101f 40%,#04070f 100%);
+
+    overflow:hidden;
+}
+
+/* Background Glow */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:450px;
+    height:450px;
+
+    background:#00bfff;
+
+    filter:blur(180px);
+
+    border-radius:50%;
+
+    opacity:.18;
+
+    left:-150px;
+    top:-120px;
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:400px;
+    height:400px;
+
+    background:#8b3dff;
+
+    filter:blur(180px);
+
+    border-radius:50%;
+
+    opacity:.18;
+
+    right:-120px;
+    bottom:-120px;
+}
+
+/* Login Container */
+
+.log{
+
+    width:100vw;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+/* Card */
+
+.log form{
+
+    width:420px;
+
+    padding:45px;
+
+    background:rgba(15,24,48,.85);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(0,184,255,.25);
+
+    border-radius:22px;
+
+    box-shadow:
+    0 0 40px rgba(0,184,255,.15);
+
+    position:relative;
+}
+
+/* Heading */
+
+.log form::before{
+
+    content:"ACE AI";
+
+    display:block;
+
+    text-align:center;
+
+    color:white;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+    letter-spacing:2px;
+
+    background:linear-gradient(90deg,#00B8FF,#32D7FF,#8B3DFF);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+}
+
+.log form::after{
+
+    content:"Your Personal AI Mentor";
+
+    display:block;
+
+    text-align:center;
+
+    color:#b8c5dd;
+
+    margin-bottom:28px;
+
+    font-size:15px;
+}
+
+/* Inputs */
+
+.log input[type=email],
+.log input[type=password]{
+
+    width:100%;
+
+    padding:16px;
+
+    margin-top:18px;
+
+    border-radius:12px;
+
+    border:1px solid #2d4770;
+
+    background:#0d1630;
+
+    color:white;
+
+    font-size:15px;
+
+    transition:.35s;
+}
+
+.log input::placeholder{
+
+    color:#7f90ad;
+}
+
+.log input:focus{
+
+    outline:none;
+
+    border-color:#00bfff;
+
+    box-shadow:
+    0 0 15px rgba(0,191,255,.45);
+}
+
+/* Login Button */
+
+.log input[type=submit]{
+
+    width:100%;
+
+    margin-top:28px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    color:white;
+
+    background:linear-gradient(
+    90deg,
+    #00B8FF,
+    #31D5FF,
+    #8B3DFF);
+
+    transition:.35s;
+}
+
+.log input[type=submit]:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 25px rgba(0,184,255,.45);
+}
+
+/* Forgot Password */
+
+.log a{
+
+    display:block;
+
+    text-align:center;
+
+    margin-top:18px;
+
+    color:#31d5ff;
+
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+.log a:hover{
+
+    color:#8b3dff;
+}
+
+/* Register Button */
+
+.log button{
+
+    width:100%;
+
+    margin-top:20px;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    border:1px solid #00bfff;
+
+    background:transparent;
+
+    color:#31d5ff;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.35s;
+}
+
+.log button:hover{
+
+    background:#00bfff;
+
+    color:#08101f;
+
+    box-shadow:
+    0 0 18px rgba(0,184,255,.5);
+}
+
+/* Mobile */
+
+@media(max-width:500px){
+
+    .log form{
+
+        width:92%;
+
+        padding:30px;
+    }
+
+}
