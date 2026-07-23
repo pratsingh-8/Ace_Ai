@@ -5,4 +5,5 @@ import{RouterProvider} from 'react-router-dom'
 import {Route} from '../src/components/router/Route.jsx'
 createRoot(document.getElementById('root')).render(
    <RouterProvider router={Route}/>
+   
 )

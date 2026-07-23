@@ -1,0 +1,219 @@
+/*==============================
+        ACE AI Resume Builder
+===============================*/
+
+.resumePage{
+    min-height:100vh;
+    width: 100%;;
+    padding:45px;
+    background:
+    radial-gradient(circle at top,#143b86 0%,#071321 40%,#030712 100%);
+    color:white;
+    overflow:auto;
+}
+
+.resumePage h1{
+    color:#ffffff;
+    font-size:42px;
+    letter-spacing:2px;
+    margin-bottom:35px;
+    text-transform:uppercase;
+    text-shadow:
+    0 0 10px #1da1ff,
+    0 0 25px #2563eb;
+}
+
+.resumePage #f1{
+    width:100%;
+    margin:auto;
+    padding:40px;
+    border-radius:24px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(80,170,255,.35);
+
+    box-shadow:
+    0 0 30px rgba(37,99,235,.25),
+    inset 0 0 30px rgba(255,255,255,.03);
+}
+
+.resumePage form{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:22px;
+
+}
+
+.resumePage label{
+
+    grid-column:1/-1;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:#57d2ff;
+
+    margin-top:18px;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    text-shadow:0 0 10px #00bfff;
+
+}
+
+.resumePage input{
+
+    width:100%;
+
+    padding:16px 18px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(0,183,255,.25);
+
+    color:white;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.35s;
+
+}
+
+.resumePage input::placeholder{
+
+    color:#9bcfff;
+
+}
+
+.resumePage input:focus{
+
+    border-color:#00bfff;
+
+    background:rgba(255,255,255,.09);
+
+    box-shadow:
+
+    0 0 10px #00bfff,
+
+    0 0 20px rgba(0,183,255,.35);
+
+}
+
+.resumePage input[type="submit"]{
+
+    grid-column:1/-1;
+
+    width:240px;
+
+    justify-self:center;
+
+    margin-top:20px;
+
+    border:none;
+
+    background:linear-gradient(
+    135deg,
+    #00d4ff,
+    #2563eb,
+    #7c3aed);
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    letter-spacing:1px;
+
+    transition:.35s;
+
+}
+
+.resumePage input[type="submit"]:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 0 15px #00d4ff,
+
+    0 0 40px #2563eb,
+
+    0 0 70px #7c3aed;
+
+}
+
+.resumePage input[type="date"]{
+
+    color:#b8ddff;
+
+}
+
+.resumePage::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.resumePage::-webkit-scrollbar-thumb{
+
+    background:#2563eb;
+
+    border-radius:20px;
+
+}
+
+.resumePage::-webkit-scrollbar-track{
+
+    background:#05101d;
+
+}
+
+@media(max-width:900px){
+
+.resumePage{
+
+padding:20px;
+
+}
+
+.resumePage form{
+
+grid-template-columns:1fr;
+
+}
+
+.resumePage h1{
+
+font-size:30px;
+
+}
+
+.resumePage #f1{
+
+padding:25px;
+
+}
+
+.resumePage input[type="submit"]{
+
+width:100%;
+
+}
+
+}

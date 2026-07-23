@@ -33,7 +33,7 @@ const Login = () => {
             }
             if(respo.ok){
                 localStorage.setItem("Token",res.Token)
-                navigate('/dashboard');
+                navigate('/sidebar');
             }
 
 

@@ -4,6 +4,9 @@ import Login from '../login/Login'
 import App from '../../App'
 import Regi from '../reg/Regi'
 import Dashboard from '../dashboard/Dashboard'
+import Resbld from '../sidebars/Resbld'
+import Res from '../resume/Res'
+import Protect from '../Protect'
 export const Route = createBrowserRouter(
     [
         {
@@ -16,7 +19,17 @@ export const Route = createBrowserRouter(
         ,{
             path:'/register',element:<Regi/>
         },{
-            path:'/dashboard',element:<Dashboard/>
-        }
+            path:'/sidebar',element:(
+                <Protect child={<Resbld/>}/>),
+            children:[
+                {
+                    index:true,
+                    element:<Dashboard/>
+                },{
+                    path:'resume',
+                    element:<Res/>
+                }
+            ]
+        },
     ]
 )

@@ -1,6 +1,11 @@
 const mode = require('../model/skele')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
+const Groq = require('groq-sdk');
+
+
+
+
 
 const getdata = async (req,res)=>{
     try{
