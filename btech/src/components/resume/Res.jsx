@@ -75,7 +75,8 @@ const Res = () => {
                 <input type='text' placeholder='Skill Stack Used*'{...register('Technology used',{required:true})} />
                 <input type="url" placeholder='project link(optional)'{...register('project_link')} />
                 <br />
-                <input type='submit'></input>
+                <input id="sub" hidden type='submit'></input>
+                <label htmlFor="sub" style={{display:'flex',justifyContent:'center',width:'auto'}}>Generate</label>
             </form>
         </div>
     </div>

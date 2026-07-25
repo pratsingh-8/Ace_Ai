@@ -7,6 +7,7 @@ import Dashboard from '../dashboard/Dashboard'
 import Resbld from '../sidebars/Resbld'
 import Res from '../resume/Res'
 import Protect from '../Protect'
+import Ats from '../ATS/Ats'
 export const Route = createBrowserRouter(
     [
         {
@@ -28,6 +29,9 @@ export const Route = createBrowserRouter(
                 },{
                     path:'resume',
                     element:<Res/>
+                },{
+                    path:'atschecker',
+                    element:<Ats/>
                 }
             ]
         },

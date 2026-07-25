@@ -19,7 +19,7 @@ const Resbld = () => {
                                 <li><Link to='/sidebar'>Dashboard</Link></li>
                                 <li><Link to='/sidebar/resume'>Resume Builder</Link></li>
                                 <li><Link to='/sidebar/mockinter'>AI Mock</Link></li>
-                                <li><Link to='/sidebar/ATScore'>ATS Score</Link></li>
+                                <li><Link to='/sidebar/atschecker'>ATS Score</Link></li>
                                 <li><Link to='/sidebar/pracque'>Question Bank</Link></li>
                                 <li><Link to='/sidebar/communication'>Communication</Link></li>
                             </ul>

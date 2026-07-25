@@ -1,0 +1,320 @@
+/* ===================================================
+                    ATS PAGE
+=================================================== */
+
+.Ats{
+    width:100%;
+    min-height:100vh;
+    background:linear-gradient(135deg,#020617,#081229,#020617);
+    font-family:'Segoe UI',sans-serif;
+    color:#fff;
+}
+
+/* ===================================================
+                    NAVBAR
+=================================================== */
+
+.Ats nav{
+    width:100%;
+    height:75px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:rgba(8,18,41,.85);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(0,191,255,.18);
+    box-shadow:0 0 20px rgba(0,191,255,.08);
+}
+
+.Ats nav h1{
+    color:#00D4FF;
+    font-size:30px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-shadow:0 0 15px rgba(0,212,255,.6);
+}
+
+/* ===================================================
+                    MAIN CONTAINER
+=================================================== */
+
+.Ats .below2{
+    width:90%;
+    margin:45px auto;
+    display:flex;
+    gap:40px;
+    align-items:stretch;
+}
+
+/* ===================================================
+                    LEFT CARD
+=================================================== */
+
+.Ats .lt{
+    flex:1;
+    background:rgba(15,23,42,.85);
+    border:1px solid rgba(0,191,255,.18);
+    border-radius:25px;
+    padding:40px;
+    backdrop-filter:blur(18px);
+    box-shadow:
+        0 0 25px rgba(0,191,255,.08),
+        0 0 60px rgba(0,191,255,.05);
+}
+
+.Ats .upper h2{
+    font-size:42px;
+    color:#fff;
+    margin-bottom:20px;
+    line-height:1.2;
+}
+
+.Ats .upper p{
+    color:#cbd5e1;
+    line-height:1.8;
+    font-size:17px;
+}
+
+/* ===================================================
+                    UPLOAD SECTION
+=================================================== */
+
+.Ats .lower{
+    margin-top:35px;
+    border:2px dashed #00BFFF;
+    border-radius:20px;
+    padding:35px;
+    text-align:center;
+    background:rgba(0,191,255,.03);
+    transition:.4s;
+}
+
+.Ats .lower:hover{
+    border-color:#00D4FF;
+    box-shadow:
+        0 0 20px rgba(0,191,255,.18),
+        0 0 40px rgba(0,191,255,.08);
+    transform:translateY(-3px);
+}
+
+.Ats .lower h4{
+    font-size:26px;
+    color:#00D4FF;
+    margin-bottom:10px;
+}
+
+.Ats .lower p{
+    color:#b8c5d8;
+    line-height:1.7;
+    margin-bottom:30px;
+}
+
+.Ats .lower form{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+}
+
+/* ===================================================
+                CUSTOM UPLOAD BUTTON
+=================================================== */
+
+.Ats .lower label{
+    display:inline-block;
+    padding:15px 35px;
+    border-radius:50px;
+    background:linear-gradient(90deg,#00BFFF,#2563EB);
+    color:white;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.35s;
+    box-shadow:0 10px 25px rgba(37,99,235,.25);
+}
+
+.Ats .lower label:hover{
+    transform:translateY(-3px) scale(1.03);
+    box-shadow:
+        0 0 18px #00BFFF,
+        0 0 35px #2563EB;
+}
+
+/* ===================================================
+                SUBMIT BUTTON
+=================================================== */
+
+.Ats input[type="submit"]{
+    width:220px;
+    padding:15px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(90deg,#8B5CF6,#2563EB);
+    color:white;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.35s;
+}
+
+.Ats input[type="submit"]:hover{
+    transform:translateY(-3px);
+    box-shadow:
+        0 0 15px #8B5CF6,
+        0 0 30px #2563EB;
+}
+
+.Ats input[type="submit"]:active{
+    transform:scale(.97);
+}
+
+/* ===================================================
+                    RIGHT CARD
+=================================================== */
+
+.Ats .rt{
+    flex:.9;
+    min-height:620px;
+    background:rgba(15,23,42,.85);
+    border:1px solid rgba(0,191,255,.18);
+    border-radius:25px;
+    backdrop-filter:blur(18px);
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:
+        0 0 25px rgba(0,191,255,.08),
+        0 0 60px rgba(0,191,255,.05);
+}
+
+/* Decorative Glow */
+
+.Ats .rt::before{
+    content:"";
+    position:absolute;
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    background:radial-gradient(circle,#00BFFF,transparent);
+    filter:blur(80px);
+    opacity:.25;
+    top:-100px;
+    right:-80px;
+}
+
+.Ats .rt::after{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    background:radial-gradient(circle,#8B5CF6,transparent);
+    filter:blur(70px);
+    opacity:.2;
+    bottom:-80px;
+    left:-80px;
+}
+
+/* ===================================================
+            PREVIEW AREA (Optional)
+=================================================== */
+
+.Ats .preview{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    padding:25px;
+}
+
+.Ats .preview img{
+    width:180px;
+    margin-bottom:25px;
+}
+
+.Ats .preview h2{
+    color:#00D4FF;
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.Ats .preview p{
+    color:#cbd5e1;
+    line-height:1.8;
+    font-size:16px;
+}
+
+/* ===================================================
+            FILE NAME
+=================================================== */
+
+.Ats .filename{
+    color:#00D4FF;
+    font-size:15px;
+    font-weight:500;
+}
+
+/* ===================================================
+            ERROR MESSAGE
+=================================================== */
+
+.Ats .error{
+    color:#ff5c5c;
+    font-size:14px;
+}
+
+/* ===================================================
+                RESPONSIVE
+=================================================== */
+
+@media(max-width:1000px){
+
+    .Ats .below2{
+        flex-direction:column;
+    }
+
+    .Ats .lt,
+    .Ats .rt{
+        width:100%;
+    }
+
+    .Ats .rt{
+        min-height:400px;
+    }
+
+    .Ats .upper h2{
+        font-size:34px;
+    }
+}
+
+@media(max-width:600px){
+
+    .Ats nav h1{
+        font-size:22px;
+    }
+
+    .Ats .lt{
+        padding:25px;
+    }
+
+    .Ats .lower{
+        padding:25px;
+    }
+
+    .Ats .lower label{
+        width:100%;
+    }
+
+    .Ats input[type="submit"]{
+        width:100%;
+    }
+
+    .Ats .upper h2{
+        font-size:28px;
+    }
+
+    .Ats .upper p{
+        font-size:15px;
+    }
+}
