@@ -13,7 +13,7 @@ const resume = async (req,res)=>{
         const pro = req.body;
         // console.log(pro);
         const completion = await apii.chat.completions.create({
-        model: "llama-3.3-70b-versatile", // or another supported Groq model
+        model: "openai/gpt-oss-20b", // or another supported Groq model
         messages: [
             {role:`system`,content: `You are an expert resume writer. Generate a resume using ONLY the information provided in the user message — never invent, assume, or add facts, skills, dates, or achievements not present in the input.
 
@@ -204,7 +204,7 @@ const Ats = async (req,res)=>{
         const data = await pd(buffer);
         const datatext = data.text;
         const completion = await apii.chat.completions.create({
-            model:"llama-3.3-70b-versatile",
+            model:"openai/gpt-oss-20b",
             messages:[
                 {
                     role:"system",
@@ -227,9 +227,11 @@ const Ats = async (req,res)=>{
             ]
         })
         const result = await completion.choices[0].message.content
+        console.log(result)
         const clean = result
                         .replace(/```json/g, "")
                         .replace(/```/g, "")
+                        .replace()
                         .trim();
 
         const respo = JSON.parse(clean);
