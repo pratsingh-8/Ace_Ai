@@ -1,0 +1,378 @@
+/* =========================================
+   ACE AI - PROFILE PAGE
+========================================= */
+
+.profile {
+    min-height: 100vh;
+    width: 100%;
+
+    padding: 45px 70px;
+
+    box-sizing: border-box;
+
+    background:
+        radial-gradient(
+            circle at 80% 0%,
+            rgba(37, 99, 235, 0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 0% 40%,
+            rgba(59, 130, 246, 0.06),
+            transparent 25%
+        ),
+        #080c14;
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.profile > h1 {
+    margin: 0;
+
+    font-size: 32px;
+    font-weight: 650;
+
+    letter-spacing: -0.6px;
+
+    color: #f8fafc;
+}
+
+.profile > h1::after {
+    content: "Manage your personal and career information";
+
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    letter-spacing: 0;
+
+    color: #7f8a9d;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.profile form {
+    width: 100%;
+    max-width: 900px;
+
+    margin-top: 35px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+/* =========================================
+   SECTION CARD
+========================================= */
+
+.profile-section {
+    position: relative;
+
+    padding: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.035),
+            rgba(255, 255, 255, 0.015)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(12px);
+
+    transition:
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.profile-section:hover {
+    border-color: rgba(59, 130, 246, 0.25);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.profile-section h2 {
+    margin: 0 0 22px;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    color: #f1f5f9;
+}
+
+.profile-section h2::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 4px;
+    height: 18px;
+
+    margin-right: 10px;
+
+    vertical-align: -3px;
+
+    border-radius: 10px;
+
+    background: #3b82f6;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.profile-section label {
+    display: block;
+
+    margin: 14px 0 8px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    color: #aeb8c8;
+}
+
+
+/* =========================================
+   INPUT + TEXTAREA
+========================================= */
+
+.profile-section input,
+.profile-section textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 15px;
+
+    background: rgba(7, 12, 22, 0.8);
+
+    border: 1px solid #293344;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    color: #f8fafc;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* Placeholder */
+
+.profile-section input::placeholder,
+.profile-section textarea::placeholder {
+    color: #596579;
+}
+
+
+/* Focus */
+
+.profile-section input:focus,
+.profile-section textarea:focus {
+    background: #0a1220;
+
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 0 0 3px rgba(59, 130, 246, 0.10),
+        0 5px 20px rgba(37, 99, 235, 0.08);
+}
+
+
+/* =========================================
+   TEXTAREA
+========================================= */
+
+.profile-section textarea {
+    min-height: 115px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   SELECT
+========================================= */
+
+.profile-section select {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    background: #0a1220;
+
+    border: 1px solid #293344;
+
+    border-radius: 9px;
+
+    color: #ffffff;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   DISABLED INPUT
+========================================= */
+
+.profile-section input:disabled {
+    background: #0a0e17;
+
+    color: #6f7b8e;
+
+    border-color: #202938;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.profile form > button {
+    align-self: flex-start;
+
+    margin-top: 5px;
+
+    padding: 12px 25px;
+
+    border: 1px solid rgba(96, 165, 250, 0.25);
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #3b82f6
+        );
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(37, 99, 235, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+
+.profile form > button:hover {
+    transform: translateY(-2px);
+
+    filter: brightness(1.08);
+
+    box-shadow:
+        0 12px 30px rgba(37, 99, 235, 0.32);
+}
+
+
+.profile form > button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+.profile::-webkit-scrollbar {
+    width: 7px;
+}
+
+.profile::-webkit-scrollbar-track {
+    background: #080c14;
+}
+
+.profile::-webkit-scrollbar-thumb {
+    background: #263247;
+
+    border-radius: 10px;
+}
+
+.profile::-webkit-scrollbar-thumb:hover {
+    background: #34445f;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .profile {
+        padding: 35px 30px;
+    }
+
+    .profile form {
+        max-width: 100%;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .profile {
+        padding: 25px 18px;
+    }
+
+    .profile > h1 {
+        font-size: 27px;
+    }
+
+    .profile-section {
+        padding: 20px;
+    }
+
+    .profile form {
+        margin-top: 25px;
+    }
+}

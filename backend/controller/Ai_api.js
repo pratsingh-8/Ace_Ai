@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer')
 const fs = require('fs')
+const mode = require('../model/skele')
 const pd = require("pdf-parse");
 const Groq = require('groq-sdk')
 const apii = new Groq({
@@ -199,6 +200,7 @@ const resume = async (req,res)=>{
 }
 const Ats = async (req,res)=>{
     try{
+        console.log('ji')
         // console.log(req.file)
         const buffer = fs.readFileSync(req.file.path)
         const data = await pd(buffer);
@@ -246,4 +248,145 @@ const Ats = async (req,res)=>{
     }
     
 }
-module.exports={resume,Ats}
+const asses= async(req,res)=>{
+    console.log("asses")
+    try{
+        const {course,count,Level,department} = req.body
+        const prompt = `
+                Generate ${count} multiple choice questions.
+
+                Department: ${department}
+                Course: ${course}
+                Difficulty: ${Level}
+
+                Each question must have:
+                - question
+                - 4 options
+                - correct answer
+            
+            `;
+        const call= await apii.chat.completions.create({
+            model:`openai/gpt-oss-20b`,
+            messages:[
+                {
+                    role:"system",
+                    content:"You are an AI assessment question generator.Give The response in proper json format so that i can use it in radio input"
+                },
+                {
+                    role:'user',
+                    content:prompt
+                },
+            ]
+        })
+        const ans = call.choices[0].message.content;
+         const clean = ans
+                        .replace(/```json/g, "")
+                        .replace(/```/g, "")
+                        .replace()
+                        .trim();
+        const arr = JSON.parse(clean)
+        // console.log(arr)
+        res.status(200).json({
+            success:true,
+            arr
+        })
+    }catch(err){
+        // res.status(500).json({
+        //     success:false,
+        //     message:err.message
+        // })
+        console.log(err.message)
+    }
+}
+const calc= async(req,res)=>{
+    try{
+        console.log("calc")
+        const data = req.body
+        const prompt = `
+            You are an AI assessment evaluator.
+
+            You will receive an array of objects. Each object contains:
+
+            - "question": the question asked to the student
+            - "studentResponse": the student's selected answer. It can be a string or null.
+            - "CorrectAnswer": the correct answer to the question
+
+            Evaluate every question in the array.
+
+            Rules:
+
+            1. Each question carries exactly 5 marks.
+            2. If "studentResponse" is null, the question is unanswered and receives 0 marks.
+            3. If "studentResponse" matches "CorrectAnswer", the student gets 5 marks.
+            4. If "studentResponse" does not match "CorrectAnswer", the student gets 0 marks.
+            5. Do not give partial marks.
+            6. Calculate the total marks, obtained marks, percentage, attempted questions, unanswered questions, correct answers, and incorrect answers.
+            7. Analyze the questions that were answered incorrectly or left unanswered.
+            8. Identify the topics/concepts where the student needs improvement based on those questions.
+            9. Provide useful feedback and recommendations for further preparation.
+            10. Evaluate all objects in the input array.
+            11. Return ONLY valid JSON. Do not return markdown or any text outside the JSON.
+
+            Return the response in this format:
+
+            {
+            "totalQuestions": 0,
+            "attemptedQuestions": 0,
+            "unansweredQuestions": 0,
+            "correctAnswers": 0,
+            "incorrectAnswers": 0,
+            "totalMarks": 0,
+            "obtainedMarks": 0,
+            "percentage": 0,
+            "questionResults": [
+                {
+                "question": "",
+                "studentAnswer": null,
+                "correctAnswer": "",
+                "status": "correct",
+                "marks": 5
+                }
+            ],
+            "feedback": {
+                "strengths": [],
+                "areasToImprove": [],
+                "recommendations": []
+            }
+            }
+
+            Student assessment data:${JSON.stringify(data, null, 2)}
+        `
+        const call = await apii.chat.completions.create({
+            model:'openai/gpt-oss-20b',
+            messages:[
+                {
+                    role:"system",
+                    content:`You are an AI assessment evaluator`
+                },{
+                    role:'user',
+                    content:prompt
+                }
+            ]
+
+        })
+
+        const ans = call.choices[0].message.content
+        const clean = ans
+                        .replace(/```json/g, "")
+                        .replace(/```/g, "")
+                        .replace()
+                        .trim();
+        const newans= JSON.parse(clean)
+        console.log(newans)
+        res.status(201).json({
+            success:true,
+            newans
+        })
+    }catch(err){
+        res.json({
+            success:false,
+            message:err.message
+        })
+    }
+}
+module.exports={resume,Ats,asses,calc}

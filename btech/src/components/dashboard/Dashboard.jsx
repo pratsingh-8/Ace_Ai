@@ -8,7 +8,7 @@ const Dashboard = () => {
   return (
     <div>
       <div className="cont1">
-        <h1>Dashboard</h1>
+        <h1>Under Construction</h1>
       </div>
     </div>
   )

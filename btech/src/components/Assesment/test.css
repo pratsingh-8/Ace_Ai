@@ -1,0 +1,304 @@
+/* =========================
+   MAIN TEST PAGE
+========================= */
+
+.test {
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+
+    background:
+        radial-gradient(circle at 15% 20%, rgba(0, 220, 255, 0.08), transparent 30%),
+        radial-gradient(circle at 85% 80%, rgba(150, 0, 255, 0.08), transparent 30%),
+        #050816;
+
+    color: #ffffff;
+
+    padding: 45px 8%;
+    font-family: "Inter", sans-serif;
+}
+
+
+/* =========================
+   DEPARTMENT TITLE
+========================= */
+
+.test > h1 {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 30px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 10px rgba(0, 220, 255, 0.5);
+}
+
+
+/* =========================
+   TIMER
+========================= */
+
+.timer {
+    width: 100px;
+    height: 45px;
+
+    margin: 0 auto 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid #00d9ff;
+    border-radius: 10px;
+
+    background: rgba(0, 217, 255, 0.08);
+
+    color: #00eaff;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    box-shadow:
+        0 0 15px rgba(0, 217, 255, 0.2);
+}
+
+
+/* =========================
+   QUESTION CONTAINER
+========================= */
+
+.que {
+    max-width: 850px;
+    margin: auto;
+
+    padding: 35px 40px;
+
+    border: 1px solid rgba(0, 217, 255, 0.35);
+    border-radius: 18px;
+
+    background: rgba(10, 17, 38, 0.85);
+
+    box-shadow:
+        0 0 25px rgba(0, 217, 255, 0.08),
+        inset 0 0 20px rgba(120, 0, 255, 0.03);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================
+   QUESTION NUMBER
+========================= */
+
+.que > span {
+    display: inline-block;
+
+    padding: 7px 14px;
+
+    border-radius: 7px;
+
+    background: rgba(0, 217, 255, 0.1);
+
+    border: 1px solid rgba(0, 217, 255, 0.35);
+
+    color: #00eaff;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   QUESTION TEXT
+========================= */
+
+.que h3 {
+    margin: 22px 0 30px;
+
+    color: #f1f5ff;
+
+    font-size: 21px;
+    line-height: 1.6;
+
+    font-weight: 500;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.que form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+/* =========================
+   RADIO BUTTON
+========================= */
+
+.que form input[type="radio"] {
+    width: 18px;
+    height: 18px;
+
+    margin-right: 12px;
+
+    accent-color: #00d9ff;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   OPTIONS
+========================= */
+
+/* .que form {
+    color: #cbd5e1;
+    font-size: 16px;
+} */
+ .options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 18px 20px;
+
+  border: 1px solid rgba(0, 217, 255, 0.25);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.03);
+
+  color: #e5e7eb;
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.option:hover {
+  border-color: #00d9ff;
+  background: rgba(0, 217, 255, 0.08);
+  box-shadow: 0 0 15px rgba(0, 217, 255, 0.15);
+}
+
+.option input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #00d9ff;
+  cursor: pointer;
+}
+
+
+/* =========================
+   NEXT QUESTION
+========================= */
+
+.que form label {
+    width: fit-content;
+
+    margin-top: 15px;
+    padding: 12px 28px;
+
+    border-radius: 8px;
+
+    background: linear-gradient(
+        90deg,
+        #00c6ff,
+        #0072ff
+    );
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px rgba(0, 198, 255, 0.25);
+
+    transition:
+        box-shadow 0.2s ease,
+        border 0.2s ease;
+}
+
+.que form label:hover {
+    box-shadow:
+        0 0 25px rgba(0, 198, 255, 0.45);
+}
+
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+
+.que .su{
+    margin-top: 25px;
+
+    padding: 12px 30px;
+
+    border: 1px solid rgba(180, 0, 255, 0.5);
+    border-radius: 8px;
+
+    background: rgba(150, 0, 255, 0.1);
+
+    color: #d8b4fe;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px rgba(150, 0, 255, 0.1);
+
+    transition:
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.que > button:hover {
+    background: rgba(150, 0, 255, 0.18);
+
+    box-shadow:
+        0 0 20px rgba(150, 0, 255, 0.3);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .test {
+        padding: 30px 18px;
+    }
+
+    .test > h1 {
+        font-size: 27px;
+    }
+
+    .que {
+        padding: 25px 20px;
+    }
+
+    .que h3 {
+        font-size: 18px;
+    }
+
+    .que form {
+        font-size: 15px;
+    }
+}

@@ -8,36 +8,33 @@ import '../sidebars/side.css'
 const Resbld = () => {
     const navigate = useNavigate();
   return (
-    <div>
-        <div className="bigcont">
-            <div className="sidebar">
-                        <div className="logo1">
-                            <img src={logo2}></img>
-                        </div>
-                        <div className="rest1">
-                            <ul>
-                                <li><Link to='/sidebar'>Dashboard</Link></li>
-                                <li><Link to='/sidebar/resume'>Resume Builder</Link></li>
-                                <li><Link to='/sidebar/mockinter'>AI Mock</Link></li>
-                                <li><Link to='/sidebar/atschecker'>ATS Score</Link></li>
-                                <li><Link to='/sidebar/pracque'>Question Bank</Link></li>
-                                <li><Link to='/sidebar/communication'>Communication</Link></li>
-                            </ul>
-                        </div>
-                        <div className="logout">
-                            <FaUserCircle size={34} color="#2563eb" />
-                            <button onClick={()=>{
-                                localStorage.removeItem('Token');
-                                navigate('/login',{replace:true});
-                            }}>log out</button>
-                        </div>
+    <div className='mainpage'>
+        <div className="sidebar">
+            <div className="logo1">
+                <img src={logo2}></img>
             </div>
-            <div className="maincont">
-                <Outlet/>
+            <div className="rest1">
+                <ul>
+                    <li><Link to='/sidebar'>Dashboard</Link></li>
+                    <li><Link to='/sidebar/resume'>Resume Builder</Link></li>
+                    {/* <li><Link to='/sidebar/mockinter'>AI Mock</Link></li> */}
+                    <li><Link to='/sidebar/atschecker'>ATS Score</Link></li>
+                    <li><Link to='/sidebar/assess'>Assesment</Link></li>
+                    {/* <li><Link to='/sidebar/communication'>Communication</Link></li> */}
+                    <li><Link to='/sidebar/pro'>Profile</Link></li>   
+                </ul>
+            </div>
+            <div className="logout">
+                <FaUserCircle size={34} color="#2563eb" />
+                <button onClick={()=>{
+                    localStorage.removeItem('Token');
+                    navigate('/login',{replace:true});
+                }}>log out</button>
             </div>
         </div>
-        
-
+        <div className="maincont">
+            <Outlet/>
+        </div>
     </div>
   )
 }

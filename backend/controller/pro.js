@@ -1,21 +1,16 @@
 const mode = require('../model/skele')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const Groq = require('groq-sdk');
-
 
 
 
 
 const getdata = async (req,res)=>{
     try{
-        const all_data = await mode.find();
-        res.status(200).json({
-            success:true,
-            item:all_data
-        })
-        console.log(all_data)
-        
+        const key = req.key
+        const tkn = jwt.verify(key,process.env.JWTKEY)
+        const data = await mode.findById(tkn.id)
+        return data ? res.status(200).json({succsess:true,data}):res.status(404).json({success:false,message:"ERROR-404-NOT FOUND"});
     }
     catch(err){
         console.log(err.message);
@@ -88,4 +83,23 @@ const create = async (req,res)=>{
         })
     }
 }
-module.exports={getdata,create,authen};
+const profile = async (req,res)=>{
+    try{
+        // console.log(req.body)
+        const {MySkill,phone,prepare_for}= req.body
+        const key = req.key
+        const tkn = jwt.verify(key,process.env.JWTKEY)
+        // console.log(tkn);
+        const m1 = await mode.findByIdAndUpdate(tkn.id,{MySkill,phone,prepare_for})
+        return m1 ? res.status(201).json({
+            success:true,
+            message:'created'
+        }):res.status(202).json({
+            success:false,
+            message:'lunch chal raha hai baad mein aana'
+        })
+    }catch(err){
+        console.error(err.message)
+    }
+}
+module.exports={getdata,create,authen,profile};

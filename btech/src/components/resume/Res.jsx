@@ -12,11 +12,12 @@ const Res = () => {
         } = useForm();
         const resbuild = async (data)=>{
             try{
+                const token=localStorage.getItem('Token')
                 console.log("button daba")
                 const url="http://localhost:3000/ace-ai/resume"
                 const rest={
                     method:'POST',
-                    headers: {"Content-Type": "application/json",},
+                    headers: {"Content-Type":"application/json","authorization":`bearer${token}`},
                     body:JSON.stringify(data)
                 }
                 const result = await fetch(url,rest)

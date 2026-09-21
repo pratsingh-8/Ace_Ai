@@ -1,0 +1,418 @@
+/* =========================================
+   ACE AI - CSE ASSESSMENT
+   ========================================= */
+
+.cse {
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    padding: 40px 55px;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(37, 99, 235, 0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 85%,
+            rgba(124, 58, 237, 0.10),
+            transparent 30%
+        ),
+        #050914;
+
+    color: #f8fafc;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+
+/* =========================================
+   BACK LINK
+   ========================================= */
+
+.cse > a {
+    display: inline-block;
+
+    padding: 9px 16px;
+    margin-bottom: 25px;
+
+    color: #67e8f9;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    border: 1px solid rgba(34, 211, 238, 0.35);
+    border-radius: 8px;
+
+    background: rgba(15, 23, 42, 0.75);
+
+    transition: 0.2s ease;
+}
+
+.cse > a:hover {
+    color: white;
+
+    border-color: #22d3ee;
+
+    background: rgba(34, 211, 238, 0.08);
+
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.15);
+}
+
+
+/* =========================================
+   DEPARTMENT HEADING
+   ========================================= */
+
+.cse > h1 {
+    margin: 0 0 28px;
+
+    font-size: 36px;
+    font-weight: 700;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #67e8f9,
+        #a78bfa
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================================
+   MAIN FORM
+   ========================================= */
+
+.cse form {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 30px 35px;
+
+    box-sizing: border-box;
+
+    border-radius: 18px;
+
+    border: 1px solid rgba(71, 85, 105, 0.45);
+
+    background: rgba(8, 15, 30, 0.82);
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.25),
+        inset 0 0 30px rgba(37, 99, 235, 0.025);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================================
+   HEADINGS
+   ========================================= */
+
+.cse form h3 {
+    margin: 0 0 18px;
+
+    font-size: 20px;
+    color: #e0f2fe;
+}
+
+.cse form h4 {
+    margin: 30px 0 15px;
+
+    font-size: 17px;
+    color: #cbd5e1;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================================
+   COURSE CARDS
+   ========================================= */
+
+/*
+   Your JSX:
+
+   <input type="radio" ... />
+   <span className="core">DBMS</span>
+
+   So we use the span as the card.
+*/
+
+.cse form input[type="radio"] {
+    accent-color: #22d3ee;
+}
+
+
+/* Hide only the course radio buttons */
+
+.cse form input[type="radio"] + .core {
+    display: inline-flex;
+
+    width: calc(20% - 14px);
+    min-height: 90px;
+
+    margin: 7px;
+
+    padding: 15px;
+
+    box-sizing: border-box;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    border-radius: 13px;
+
+    border: 1px solid rgba(71, 85, 105, 0.55);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15, 27, 48, 0.95),
+            rgba(8, 16, 31, 0.95)
+        );
+
+    color: #cbd5e1;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Hide course radio */
+
+.cse form input[type="radio"] {
+    width: 18px;
+    height: 18px;
+
+    margin: 0 8px 0 5px;
+
+    accent-color: #22d3ee;
+
+    cursor: pointer;
+}
+
+
+/* Course hover */
+
+.cse form input[type="radio"] + .core:hover {
+    border-color: rgba(34, 211, 238, 0.65);
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(14, 47, 70, 0.95),
+            rgba(25, 23, 55, 0.95)
+        );
+}
+
+
+/* Selected course */
+
+.cse form input[type="radio"]:checked + .core {
+    border-color: #22d3ee;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(8, 47, 73, 0.95),
+            rgba(49, 31, 85, 0.95)
+        );
+
+    box-shadow:
+        0 0 18px rgba(34, 211, 238, 0.16),
+        inset 0 0 15px rgba(34, 211, 238, 0.04);
+}
+
+
+/* =========================================
+   LEVEL + QUESTION COUNT
+   ========================================= */
+
+/*
+   Because your JSX has:
+
+   <input ... />Easy
+   <br />
+
+   we keep these as clean horizontal
+   selection rows.
+*/
+
+.cse form input[type="radio"]:not(:has(+ .core)) {
+    width: 17px;
+    height: 17px;
+
+    margin: 5px 10px 5px 5px;
+
+    cursor: pointer;
+
+    accent-color: #22d3ee;
+}
+
+
+/* Text after radio */
+
+.cse form input[type="radio"]:not(:has(+ .core)) + * {
+    color: #cbd5e1;
+}
+
+
+/* =========================================
+   SUBMIT BUTTON
+   ========================================= */
+
+/* .cse form input[type="submit"] {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 35px;
+
+    padding: 14px 20px;
+
+    box-sizing: border-box;
+
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 20px rgba(37, 99, 235, 0.18);
+
+    transition:
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+} */
+.cse form .btn{
+    display: block;
+
+    width: 100%;
+
+    margin-top: 35px;
+
+    padding: 14px 20px;
+
+    box-sizing: border-box;
+
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 20px rgba(37, 99, 235, 0.18);
+
+    transition:
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+
+     opacity: 0.92;
+
+    box-shadow:
+        0 0 28px rgba(34, 211, 238, 0.25);
+}
+
+/* .cse form input[type="submit"]:hover {
+    opacity: 0.92;
+
+    box-shadow:
+        0 0 28px rgba(34, 211, 238, 0.25);
+} */
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 1000px) {
+
+    .cse {
+        padding: 35px 30px;
+    }
+
+    .cse form input[type="radio"] + .core {
+        width: calc(33.33% - 14px);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 650px) {
+
+    .cse {
+        padding: 25px 18px;
+    }
+
+    .cse > h1 {
+        font-size: 30px;
+    }
+
+    .cse form {
+        padding: 22px 18px;
+    }
+
+    .cse form input[type="radio"] + .core {
+        width: calc(50% - 14px);
+        min-height: 80px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 430px) {
+
+    .cse form input[type="radio"] + .core {
+        width: calc(100% - 14px);
+    }
+}

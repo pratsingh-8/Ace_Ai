@@ -8,6 +8,12 @@ import Resbld from '../sidebars/Resbld'
 import Res from '../resume/Res'
 import Protect from '../Protect'
 import Ats from '../ATS/Ats'
+import Comm from '../profile/Comm'
+import Result from '../ATS/Result'
+import Assess from '../Assesment/Assess'
+import Cse from '../Assesment/Cse'
+import Test from '../Assesment/Test'
+import NewResult from '../Assesment/NewResult'
 export const Route = createBrowserRouter(
     [
         {
@@ -32,8 +38,28 @@ export const Route = createBrowserRouter(
                 },{
                     path:'atschecker',
                     element:<Ats/>
+                },{
+                    path:'pro',
+                    element:<Comm/>
+                },{
+                    path:'assess',
+                    element:<Assess/>
                 }
             ]
-        },
+        },{
+            path:'/result',element:<Result/>
+        },{
+            path:'/cse/test',
+            element:<Cse/>
+        },{
+            path:'/sidebar/assess',
+            element:<Assess/>
+        },{
+            path:'/test',
+            element:<Test/>
+        },{
+            path: "/Testresult",
+            element: <NewResult />
+        }
     ]
 )
